@@ -47,3 +47,27 @@ type Tea struct {
 func (t *Tea) Cook() {
 	fmt.Println("不知道您要吃什么,先喝杯茶吧")
 }
+
+// SimpleRestaurant 定义简单的餐厅
+type SimpleRestaurant struct {
+}
+
+// NewSimpleRestaurant 获取一家饭店
+func NewSimpleRestaurant() *SimpleRestaurant {
+	return new(SimpleRestaurant)
+}
+
+// GetRice 获取米饭
+func (s *SimpleRestaurant) GetRice() Restaurant {
+	return new(Rice)
+}
+
+// GetNoodles 获取面条
+func (s *SimpleRestaurant) GetNoodles() Restaurant {
+	return new(Noodles)
+}
+
+// GetTea 获取茶水
+func (s *SimpleRestaurant) GetTea() Restaurant {
+	return new(Tea)
+}
